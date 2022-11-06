@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace PeopeManagement.Models
+namespace PeopeManagement.Entities
 {
     public enum Genders
     {
+        UNINFORMED,
         MALE,
-        FEMALE,
-        UNINFORMED
+        FEMALE
     }
 
     public enum Teams

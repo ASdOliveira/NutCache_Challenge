@@ -11,11 +11,10 @@ namespace PeopeManagement.Controllers
     [Route("[controller]")]
     public class EmployeeController : ControllerBase
     {
-
         [HttpGet]
-        public Employee Get()
+        public EmployeeModel Get()
         {
-            return new Employee();
+            return new EmployeeModel();
         }
     }
 }
