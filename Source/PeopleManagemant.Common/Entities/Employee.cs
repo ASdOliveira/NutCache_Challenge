@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace PeopeManagement.Entities
+namespace PeopleManagement.Common.Entities
 {
     public enum Genders
     {

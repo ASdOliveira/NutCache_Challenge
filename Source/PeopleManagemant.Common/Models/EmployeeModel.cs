@@ -1,10 +1,10 @@
-﻿using PeopeManagement.Entities;
+﻿using PeopleManagement.Common.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace PeopeManagement.Models
+namespace PeopleManagement.Common.Models
 {
     public class EmployeeModel : ModelBase<Employee>
     {

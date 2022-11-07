@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using PeopeManagement.Entities;
-using PeopeManagement.Models;
+using PeopleManagement.Common.Entities;
+using PeopleManagement.Common.Models;
 using PeopeManagement.Repositories;
 using System;
 using System.Collections.Generic;
