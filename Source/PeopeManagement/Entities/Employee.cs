@@ -20,7 +20,7 @@ namespace PeopeManagement.Entities
         BACKEND
     }
 
-    public class Employee
+    public class Employee : Entity
     {
         public string Name { get; set; } //required
         public DateTime BirthDate { get; set; } // required
