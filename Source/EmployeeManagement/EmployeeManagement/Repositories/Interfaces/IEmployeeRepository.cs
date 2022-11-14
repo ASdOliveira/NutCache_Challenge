@@ -8,5 +8,6 @@ namespace EmployeeManagement.Repositories.Interfaces
 {
     public interface IEmployeeRepository : IGenericRepository<Employee>
     {
+        Task UpdateAsync(int id, Employee employee);
     }
 }

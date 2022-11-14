@@ -88,7 +88,7 @@ namespace EmployeeManagement.Controllers
                     return BadRequest($"There are no data in the database with Id: {id}");
                 }
 
-                await service.UpdateAsync(employee);
+                await service.UpdateAsync(id, employee);
 
                 return Ok(employee);
             }

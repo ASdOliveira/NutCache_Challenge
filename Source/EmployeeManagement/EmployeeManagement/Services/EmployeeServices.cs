@@ -29,9 +29,9 @@ namespace EmployeeManagement.Services
             return await employeeRepo.GetByIdAsync(id);
         }
 
-        public async Task AddAsync(Employee obj)
+        public async Task AddAsync(Employee employee)
         {
-            await employeeRepo.AddAsync(obj);
+            await employeeRepo.AddAsync(employee);
         }
 
         public async Task RemoveAsync(int id)
@@ -39,9 +39,9 @@ namespace EmployeeManagement.Services
             await employeeRepo.RemoveAsync(id);
         }
 
-        public async Task UpdateAsync(Employee obj)
+        public async Task UpdateAsync(int id, Employee employee)
         {
-            await employeeRepo.UpdateAsync(obj);
+            await employeeRepo.UpdateAsync(id, employee);
         }
     }
 }

@@ -10,8 +10,8 @@ namespace EmployeeManagement.Services.Interfaces
     {
         Task<IEnumerable<Employee>> GetAllAsync();
         Task<Employee> GetByIdAsync(int id);
-        Task AddAsync(Employee obj);
+        Task AddAsync(Employee employee);
         Task RemoveAsync(int id);
-        Task UpdateAsync(Employee obj);
+        Task UpdateAsync(int id, Employee employee);
     }
 }
