@@ -1,5 +1,6 @@
 ﻿using EmployeeManagement.Models;
 using EmployeeManagement.Repositories;
+using EmployeeManagement.Repositories.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -11,13 +12,13 @@ namespace EmployeeManagement.Controllers
     [ApiController]
     [Route("v1/employee")]
     public class EmployeeController : ControllerBase
-    {
-        //Just to test, we need to add DI.
-        EmployeeRepository employeeRepo;
-        public EmployeeController()
+    { 
+        private readonly IEmployeeRepository employeeRepo;
+        public EmployeeController(IEmployeeRepository employeeRepository)
         {
-            employeeRepo = new EmployeeRepository();
+            employeeRepo = employeeRepository;
         }
+
         [HttpGet]
         public ActionResult GetAllAsync()
         {

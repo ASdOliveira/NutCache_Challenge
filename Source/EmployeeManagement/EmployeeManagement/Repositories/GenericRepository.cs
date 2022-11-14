@@ -1,4 +1,8 @@
-﻿using EmployeeManagement.Models;
+﻿using EmployeeManagement.DatabaseContext;
+using EmployeeManagement.Models;
+using EmployeeManagement.Repositories.Interfaces;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -6,46 +10,46 @@ using System.Threading.Tasks;
 
 namespace EmployeeManagement.Repositories
 {
-    public class GenericRepository<T> where T : Entity
+    public class GenericRepository<T> : IGenericRepository<T> where T : Entity
     {
-        private readonly List<T> temporaryRepo;
-
-        public GenericRepository()
+        protected readonly AppDbContext context;
+        protected readonly DbSet<T> dbSet;
+        public GenericRepository(AppDbContext dbContext)
         {
-            temporaryRepo = new List<T>();
+            context = dbContext;
+            dbSet = context.Set<T>();
         }
 
         public virtual IEnumerable<T> GetAll()
         {
-            return temporaryRepo;
+            return dbSet.ToList();
         }
 
         public virtual T GetById(int id)
         {
-            return temporaryRepo.FirstOrDefault(r => r.Id == id);
+            return dbSet.FirstOrDefault(r => r.Id == id);
         }
 
         public virtual void Add(T obj)
         {
-            temporaryRepo.Add(obj);
+            dbSet.Add(obj);
+            context.SaveChanges();
         }
         
         public virtual void Remove(int id)
         {
-            temporaryRepo.RemoveAll(r => r.Id == id);
+            
+            //dbSet.RemoveRange(r => r.Id == id);
+            //context.SaveChanges();
+            //temporaryRepo.RemoveAll(r => r.Id == id);
         }
 
         public virtual void Update(T obj)
         {
-            int index = temporaryRepo.FindIndex(s => s.Id == obj.Id);
-
-            if(index == -1)
+            if(dbSet.Any(s => s.Id == obj.Id))
             {
-                return;
+                dbSet.Update(obj);
             }
-
-            temporaryRepo.RemoveAt(index);
-            temporaryRepo.Add(obj);
         }
     }
 }
