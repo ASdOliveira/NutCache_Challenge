@@ -14,42 +14,47 @@ namespace EmployeeManagement.Repositories
     {
         protected readonly AppDbContext context;
         protected readonly DbSet<T> dbSet;
+
         public GenericRepository(AppDbContext dbContext)
         {
             context = dbContext;
             dbSet = context.Set<T>();
         }
 
-        public virtual IEnumerable<T> GetAll()
+        public virtual async Task<IEnumerable<T>> GetAllAsync()
         {
-            return dbSet.ToList();
+            return await dbSet.ToListAsync();
         }
 
-        public virtual T GetById(int id)
+        public virtual async Task<T> GetByIdAsync(int id)
         {
-            return dbSet.FirstOrDefault(r => r.Id == id);
+            return await dbSet.FirstOrDefaultAsync(r => r.Id == id);
         }
 
-        public virtual void Add(T obj)
+        public virtual async Task AddAsync(T obj)
         {
             dbSet.Add(obj);
-            context.SaveChanges();
+            await context.SaveChangesAsync();
         }
         
-        public virtual void Remove(int id)
+        public virtual async Task RemoveAsync(int id)
         {
-            
-            //dbSet.RemoveRange(r => r.Id == id);
-            //context.SaveChanges();
-            //temporaryRepo.RemoveAll(r => r.Id == id);
+            var data = await dbSet.FirstOrDefaultAsync(r => r.Id == id);
+            dbSet.Remove(data);
+            await context.SaveChangesAsync();
         }
 
-        public virtual void Update(T obj)
+        public virtual async Task UpdateAsync(T obj)
         {
-            if(dbSet.Any(s => s.Id == obj.Id))
+            var data = await dbSet.FirstOrDefaultAsync(r => r.Id == obj.Id);
+
+            if(data == null)
             {
-                dbSet.Update(obj);
+                throw new Exception("Data not found"); //Improve here.
             }
+
+            dbSet.Update(obj);
+            await context.SaveChangesAsync();
         }
     }
 }

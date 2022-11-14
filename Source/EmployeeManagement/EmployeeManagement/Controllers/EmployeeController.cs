@@ -20,65 +20,65 @@ namespace EmployeeManagement.Controllers
         }
 
         [HttpGet]
-        public ActionResult GetAllAsync()
+        public async Task<ActionResult> GetAllAsync()
         {
-            var employees = employeeRepo.GetAll();
+            var employees = await employeeRepo.GetAllAsync();
 
             return Ok(employees);
         }
 
         [HttpGet("{id}")]
-        public ActionResult GetById([FromRoute] int id)
+        public async Task<ActionResult> GetById([FromRoute] int id)
         {
-            var employee = employeeRepo.GetById(id);
+            var employee = await employeeRepo.GetByIdAsync(id);
 
             return employee == null ? NotFound() : Ok(employee);
         }
 
         [HttpPost]
-        public ActionResult Post([FromBody] Employee employee)
+        public async Task<ActionResult> Post([FromBody] Employee employee)
         {
             if(!ModelState.IsValid)
             {
                 return BadRequest(); // Add message
             }
 
-            employeeRepo.Add(employee);
+            await employeeRepo.AddAsync(employee);
 
             return Created($"v1/employee/{employee.Id}", employee);
         }
 
         [HttpPut("{id}")]
-        public ActionResult Put([FromRoute] int id, Employee employee)
+        public async Task<ActionResult> Put([FromRoute] int id, Employee employee)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(); // Add message
             }
 
-            var data = employeeRepo.GetById(id);
+            var data = await employeeRepo.GetByIdAsync(id);
 
             if(data == null)
             {
                 return BadRequest();
             }
 
-            employeeRepo.Update(employee);
+            await employeeRepo.UpdateAsync(employee);
 
             return Ok(employee);
         }
 
         [HttpDelete("{id}")]
-        public ActionResult Delete([FromRoute] int id)
+        public async Task<ActionResult> Delete([FromRoute] int id)
         {
 
-            var data = employeeRepo.GetById(id);
+            var data = await employeeRepo.GetByIdAsync(id);
             if (data == null)
             {
                 return NotFound();
             }
 
-            employeeRepo.Remove(id);
+            await employeeRepo.RemoveAsync(id);
 
             return NoContent();
         }

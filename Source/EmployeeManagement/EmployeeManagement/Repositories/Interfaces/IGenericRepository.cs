@@ -8,10 +8,10 @@ namespace EmployeeManagement.Repositories.Interfaces
 {
    public interface IGenericRepository<T> where T : Entity
     {
-        IEnumerable<T> GetAll();
-        T GetById(int id);
-        void Add(T obj);
-        void Remove(int id);
-        void Update(T obj);
+        Task<IEnumerable<T>> GetAllAsync();
+        Task<T> GetByIdAsync(int id);
+        Task AddAsync(T obj);
+        Task RemoveAsync(int id);
+        Task UpdateAsync(T obj);
     }
 }
