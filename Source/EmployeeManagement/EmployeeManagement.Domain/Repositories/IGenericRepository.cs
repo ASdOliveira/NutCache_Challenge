@@ -1,10 +1,10 @@
-﻿using EmployeeManagement.Models;
+﻿using EmployeeManagement.Domain.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace EmployeeManagement.Repositories.Interfaces
+namespace EmployeeManagement.Domain.Repositories
 {
    public interface IGenericRepository<T> where T : Entity
     {

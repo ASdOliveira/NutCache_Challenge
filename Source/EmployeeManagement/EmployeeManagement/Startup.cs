@@ -1,8 +1,8 @@
 using EmployeeManagement.DatabaseContext;
+using EmployeeManagement.Domain.Repositories;
+using EmployeeManagement.Domain.Services;
 using EmployeeManagement.Repositories;
-using EmployeeManagement.Repositories.Interfaces;
 using EmployeeManagement.Services;
-using EmployeeManagement.Services.Interfaces;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;

@@ -1,6 +1,6 @@
 ﻿using EmployeeManagement.DatabaseContext;
-using EmployeeManagement.Models;
-using EmployeeManagement.Repositories.Interfaces;
+using EmployeeManagement.Domain.Models;
+using EmployeeManagement.Domain.Repositories;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using System;

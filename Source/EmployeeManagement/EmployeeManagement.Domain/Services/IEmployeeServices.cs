@@ -1,10 +1,10 @@
-﻿using EmployeeManagement.Models;
+﻿using EmployeeManagement.Domain.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace EmployeeManagement.Services.Interfaces
+namespace EmployeeManagement.Domain.Services
 {
     public interface IEmployeeServices
     {

@@ -1,6 +1,6 @@
-﻿using EmployeeManagement.Models;
-using EmployeeManagement.Repositories.Interfaces;
-using EmployeeManagement.Services.Interfaces;
+﻿using EmployeeManagement.Domain.Models;
+using EmployeeManagement.Domain.Repositories;
+using EmployeeManagement.Domain.Services;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
