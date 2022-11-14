@@ -1,6 +1,8 @@
 using EmployeeManagement.DatabaseContext;
 using EmployeeManagement.Repositories;
 using EmployeeManagement.Repositories.Interfaces;
+using EmployeeManagement.Services;
+using EmployeeManagement.Services.Interfaces;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -41,6 +43,7 @@ namespace EmployeeManagement
             services.AddDbContext<AppDbContext>(options => options.UseNpgsql(connectionString));
 
             services.AddScoped<IEmployeeRepository, EmployeeRepository>();
+            services.AddScoped<IEmployeeServices, EmployeeServices>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -23,12 +23,12 @@ namespace EmployeeManagement.Repositories
 
         public virtual async Task<IEnumerable<T>> GetAllAsync()
         {
-            return await dbSet.ToListAsync();
+            return await dbSet.AsNoTracking().ToListAsync();
         }
 
         public virtual async Task<T> GetByIdAsync(int id)
         {
-            return await dbSet.FirstOrDefaultAsync(r => r.Id == id);
+            return await dbSet.AsNoTracking().FirstOrDefaultAsync(r => r.Id == id);
         }
 
         public virtual async Task AddAsync(T obj)
@@ -46,14 +46,11 @@ namespace EmployeeManagement.Repositories
 
         public virtual async Task UpdateAsync(T obj)
         {
-            var data = await dbSet.FirstOrDefaultAsync(r => r.Id == obj.Id);
-
-            if(data == null)
+            if(!context.ChangeTracker.Entries<T>().Any(r => r.Entity.Id == obj.Id))
             {
-                throw new Exception("Data not found"); //Improve here.
+                dbSet.Update(obj);
             }
 
-            dbSet.Update(obj);
             await context.SaveChangesAsync();
         }
     }
