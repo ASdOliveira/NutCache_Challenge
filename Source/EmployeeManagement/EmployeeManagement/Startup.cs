@@ -1,22 +1,15 @@
-using EmployeeManagement.DatabaseContext;
-using EmployeeManagement.Domain.Repositories;
-using EmployeeManagement.Domain.Services;
-using EmployeeManagement.Repositories;
+using Microsoft.OpenApi.Models;
 using EmployeeManagement.Services;
-using Microsoft.AspNetCore.Builder;
+using Microsoft.Extensions.Hosting;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.EntityFrameworkCore;
+using EmployeeManagement.Repositories;
+using EmployeeManagement.Domain.Services;
+using EmployeeManagement.DatabaseContext;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
-using Microsoft.OpenApi.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using EmployeeManagement.Domain.Repositories;
 
 namespace EmployeeManagement
 {

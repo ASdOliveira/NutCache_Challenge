@@ -1,8 +1,6 @@
-﻿using EmployeeManagement.Domain.Models;
-using System;
+﻿using System.Threading.Tasks;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using EmployeeManagement.Domain.Models;
 
 namespace EmployeeManagement.Domain.Repositories
 {

@@ -1,11 +1,8 @@
-﻿using EmployeeManagement.DatabaseContext;
-using EmployeeManagement.Domain.Models;
-using EmployeeManagement.Domain.Repositories;
+﻿using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using EmployeeManagement.Domain.Models;
+using EmployeeManagement.DatabaseContext;
+using EmployeeManagement.Domain.Repositories;
 
 namespace EmployeeManagement.Repositories
 {

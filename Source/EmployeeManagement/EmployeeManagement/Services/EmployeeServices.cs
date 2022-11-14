@@ -1,11 +1,8 @@
-﻿using EmployeeManagement.Domain.Models;
-using EmployeeManagement.Domain.Repositories;
-using EmployeeManagement.Domain.Services;
-using Microsoft.AspNetCore.Mvc;
-using System;
+﻿using System.Threading.Tasks;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using EmployeeManagement.Domain.Models;
+using EmployeeManagement.Domain.Services;
+using EmployeeManagement.Domain.Repositories;
 
 namespace EmployeeManagement.Services
 {
