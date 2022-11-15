@@ -1,8 +1,9 @@
 ﻿using System;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using EmployeeManagement.Domain.Services;
+using Microsoft.AspNetCore.Http;
 using EmployeeManagement.Domain.Models;
+using EmployeeManagement.Domain.Services;
 
 namespace EmployeeManagement.Controllers
 {
@@ -27,7 +28,7 @@ namespace EmployeeManagement.Controllers
             }
             catch (Exception ex)
             {
-                return StatusCode(500, $"Problem to retrieve data from database \n Exception: {ex.Message}");
+                return StatusCode(StatusCodes.Status500InternalServerError, $"Problem to retrieve data from database \n Exception: {ex.Message}");
             }
         }
 
@@ -42,7 +43,7 @@ namespace EmployeeManagement.Controllers
             }
             catch (Exception ex)
             {
-                return StatusCode(500, $"Problem to retrieve data from database \n Exception: {ex.Message}");
+                return StatusCode(StatusCodes.Status500InternalServerError, $"Problem to retrieve data from database \n Exception: {ex.Message}");
             }
         }
 
@@ -63,7 +64,7 @@ namespace EmployeeManagement.Controllers
 
             catch (Exception ex)
             {
-                return StatusCode(500, $"Problem when save data into database \n Exception: {ex.Message}");
+                return StatusCode(StatusCodes.Status500InternalServerError, $"Problem when save data into database \n Exception: {ex.Message}");
             }
         }
 
@@ -90,7 +91,7 @@ namespace EmployeeManagement.Controllers
             }
             catch (Exception ex)
             {
-                return StatusCode(500, $"Problem when update data into database \n Exception: {ex.Message}");
+                return StatusCode(StatusCodes.Status500InternalServerError, $"Problem when update data into database \n Exception: {ex.Message}");
             }
         }
 
@@ -111,7 +112,7 @@ namespace EmployeeManagement.Controllers
             }
             catch (Exception ex)
             {
-                return StatusCode(500, $"Problem when update data into database \n Exception: {ex.Message}");
+                return StatusCode(StatusCodes.Status500InternalServerError, $"Problem when update data into database \n Exception: {ex.Message}");
             }
         }
 
