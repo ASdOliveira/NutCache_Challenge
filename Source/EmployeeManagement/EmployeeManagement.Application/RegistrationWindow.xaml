@@ -1,0 +1,53 @@
+﻿<Window x:Class="ApplicationWPF.RegistrationWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ApplicationWPF"
+        mc:Ignorable="d"
+        Title="RegistrationWindow" Height="300" Width="400">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <TextBlock Text ="Name" Grid.Column="0" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <TextBlock Text ="Birth date" Grid.Column="0" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <TextBlock Text ="Gender" Grid.Column="0" Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <TextBlock Text ="Email" Grid.Column="0" Grid.Row="3" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <TextBlock Text ="CPF" Grid.Column="0" Grid.Row="4" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <TextBlock Text ="Start Date" Grid.Column="0" Grid.Row="5" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <TextBlock Text ="Team" Grid.Column="0" Grid.Row="6" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+
+        <TextBox Grid.Column="1" Grid.Row="0" Height="20" Margin="0,0,20,0" />
+        <DatePicker Grid.Column="1" Grid.Row="1" VerticalAlignment="Center" Margin="0,0,20,0" />
+        <ComboBox Grid.Column="1" Grid.Row="2" Height="20" Margin="0,0,20,0">
+            <ComboBoxItem>Male</ComboBoxItem>
+            <ComboBoxItem>Female</ComboBoxItem>
+            <ComboBoxItem>Prefer not inform</ComboBoxItem>
+        </ComboBox>
+        <TextBox Grid.Column="1" Grid.Row="3" Height="20" Margin="0,0,20,0" />
+        <TextBox Grid.Column="1" Grid.Row="4" Height="20" Margin="0,0,20,0" />
+        <DatePicker Grid.Column="1" Grid.Row="5" VerticalAlignment="Center" Margin="0,0,20,0" />
+
+        <ComboBox Grid.Column="1" Grid.Row="6" Height="20" Margin="0,0,20,0" >
+            <ComboBoxItem>Mobile</ComboBoxItem>
+            <ComboBoxItem>FrontEnd</ComboBoxItem>
+            <ComboBoxItem>BackEnd</ComboBoxItem>
+            <ComboBoxItem>None</ComboBoxItem>
+        </ComboBox>
+
+        <Button Grid.Column="0" Grid.Row="7" Content="Send" Height="20" Width="60"/>
+        <Button Grid.Column="1" Grid.Row="7" Content="Cancel" Height="20" Width="60"/>
+    </Grid>
+</Window>
