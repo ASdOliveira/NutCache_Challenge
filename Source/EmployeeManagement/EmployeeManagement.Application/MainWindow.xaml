@@ -1,0 +1,67 @@
+﻿<Window x:Class="ApplicationWPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:EmployeeManagement.Application"
+        mc:Ignorable="d"
+        Title="Employee Management Application - Nutcache" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="4*"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="0" Text="Employee management application" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+
+        <Rectangle Grid.Row="0" Fill="Black" Height="1px" VerticalAlignment="Bottom" />
+
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Button Grid.Column="0" Content="List all employees" HorizontalAlignment="Center" VerticalAlignment="Center" Click="ListAllEmployeesButton"/>
+            <Button Grid.Column="1" Content="Register an employee" HorizontalAlignment="Center" VerticalAlignment="Center" Click="RegisterEmployeeButton"/>
+            <Button Grid.Column="2" Content="Edit an employee" HorizontalAlignment="Center" VerticalAlignment="Center" Click="EditEmployeeButton"/>
+            <Button Grid.Column="3" Content= "Delete an employee" HorizontalAlignment="Center" VerticalAlignment="Center" Click="DeleteEmployeeButton"/>
+        </Grid>
+
+        <Rectangle Grid.Row="1" Fill="Black" Height="1px" VerticalAlignment="Bottom" />
+
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <TextBlock Grid.Row="0" Grid.Column="0" Text="Id" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+            <TextBlock Grid.Row="0" Grid.Column="1" Text="Name" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+            <TextBlock Grid.Row="0" Grid.Column="2" Text="Email" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+            <TextBlock Grid.Row="0" Grid.Column="3" Text="Start Date" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+            <TextBlock Grid.Row="0" Grid.Column="4" Text="Team" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+
+            <Rectangle Grid.Column="1" Grid.RowSpan="6" Fill="Black" Width="1px" HorizontalAlignment="Left" />
+            <Rectangle Grid.Column="2" Grid.RowSpan="6" Fill="Black" Width="1px" HorizontalAlignment="Left" />
+            <Rectangle Grid.Column="3" Grid.RowSpan="6" Fill="Black" Width="1px" HorizontalAlignment="Left" />
+            <Rectangle Grid.Column="4" Grid.RowSpan="6" Fill="Black" Width="1px" HorizontalAlignment="Left" />
+            <Rectangle Grid.Row="0" Grid.ColumnSpan="5" Fill="Black" Height="1px" VerticalAlignment="Bottom" />
+
+        </Grid>
+    </Grid>
+</Window>
